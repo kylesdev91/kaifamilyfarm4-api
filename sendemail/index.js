@@ -7,7 +7,6 @@ module.exports = async function (context, req) {
   const vaultName = 'kaifamilyfarm4KV';
   const url = `https://${vaultName}.vault.azure.net`;
   const client = new SecretClient(url, credential);
-
   const userRetrievedSecret = await client.getSecret('username1');
   const username1 = userRetrievedSecret.value;
   const pwdRetrievedSecret = await client.getSecret('password1');
